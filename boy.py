@@ -25,6 +25,7 @@ class AutoRun:
 
     def enter(self, e):
         self.boy.dir = self.boy.face_dir
+        self.boy.wait_start_time = get_time()
 
     def exit(self,e):
         pass
@@ -41,6 +42,9 @@ class AutoRun:
             self.boy.x = 700
             self.boy.dir *= -1
             self.boy.face_dir = self.boy.dir
+
+        if get_time() - self.boy.wait_start_time >= 5.0: # Idle 상태에서 2초 경과
+            self.boy.state_machine.handle_state_event(('TIME_OUT', None))
 
     def draw(self):
         if self.boy.face_dir == 1:
@@ -134,7 +138,7 @@ class Boy:
                 self.SLEEP: {space_down: self.IDLE},
                 self.IDLE: {time_out: self.SLEEP, right_down: self.RUN, left_down: self.RUN, right_up: self.RUN, left_up: self.RUN, a_down: self.AUTORUN},
                 self.RUN: {right_up: self.IDLE, left_up: self.IDLE, right_down: self.IDLE, left_down: self.IDLE},
-                self.AUTORUN: {right_down: self.RUN, left_down: self.RUN},
+                self.AUTORUN: {right_down: self.RUN, left_down: self.RUN, time_out: self.IDLE},
             }
         )
 
