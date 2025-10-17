@@ -123,7 +123,7 @@ class Boy:
             self.SLEEP,
             {
                 self.SLEEP: {space_down: self.IDLE},
-                self.IDLE: {time_out: self.SLEEP, right_down: self.RUN, left_down: self.RUN, right_up: self.RUN, left_up: self.RUN},
+                self.IDLE: {time_out: self.SLEEP, right_down: self.RUN, left_down: self.RUN, right_up: self.RUN, left_up: self.RUN, a_down: self.AUTORUN},
                 self.RUN: {right_up: self.IDLE, left_up: self.IDLE, right_down: self.IDLE, left_down: self.IDLE},
                 self.AUTORUN: {right_down: self.RUN, left_down: self.RUN},
             }
