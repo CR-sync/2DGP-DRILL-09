@@ -20,7 +20,18 @@ def a_down(e):
     return e[0] == 'INPUT' and e[1].type == SDL_KEYDOWN and e[1].key == SDLK_a
 
 class AutoRun:
-    pass
+    def __init__(self, boy):
+        pass
+
+    def exit(self,e):
+        pass
+
+    def do(self):
+        pass
+
+    def draw(self):
+        pass
+
 
 class Run:
     def __init__(self, boy):
