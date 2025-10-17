@@ -21,7 +21,7 @@ def a_down(e):
 
 class AutoRun:
     def __init__(self, boy):
-        pass
+        self.boy = boy
 
     def exit(self,e):
         pass
@@ -110,6 +110,8 @@ class Boy:
         self.IDLE = Idle(self)
         self.SLEEP = Sleep(self)
         self.RUN = Run(self)
+        self.AUTORUN = AutoRun(self)
+
         self.state_machine = StateMachine(
             self.SLEEP,
             {
