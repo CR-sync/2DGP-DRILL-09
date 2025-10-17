@@ -31,7 +31,7 @@ class AutoRun:
 
     def do(self):
         self.boy.frame = (self.boy.frame + 1) % 8
-        self.boy.x += self.boy.dir * 10 #run달리기 속도보다 빠르게 10.
+        self.boy.x += self.boy.dir * 20
 
         if self.boy.x < 100:
             self.boy.x = 100
