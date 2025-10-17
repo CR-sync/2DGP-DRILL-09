@@ -19,6 +19,9 @@ def left_up(e):
 def a_down(e):
     return e[0] == 'INPUT' and e[1].type == SDL_KEYDOWN and e[1].key == SDLK_a
 
+class AutoRun:
+    pass
+
 class Run:
     def __init__(self, boy):
         self.boy = boy
