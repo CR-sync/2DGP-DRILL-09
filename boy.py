@@ -34,7 +34,10 @@ class AutoRun:
         self.boy.x += self.boy.dir * 10 #run달리기 속도보다 빠르게 10.
 
     def draw(self):
-        pass
+        if self.boy.face_dir == 1:
+            self.boy.image.clip_draw(self.boy.frame * 100, 100, 100, 100, self.boy.x, self.boy.y, 200, 200)
+        else:
+            self.boy.image.clip_draw(self.boy.frame * 100, 0, 100, 100, self.boy.x, self.boy.y, 200, 200)
 
 
 class Run:
