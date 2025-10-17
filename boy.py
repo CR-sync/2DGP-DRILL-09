@@ -33,6 +33,15 @@ class AutoRun:
         self.boy.frame = (self.boy.frame + 1) % 8
         self.boy.x += self.boy.dir * 10 #run달리기 속도보다 빠르게 10.
 
+        if self.boy.x < 100:
+            self.boy.x = 100
+            self.boy.dir *= -1
+            self.boy.face_dir = self.boy.dir
+        elif self.boy.x > 700:
+            self.boy.x = 700
+            self.boy.dir *= -1
+            self.boy.face_dir = self.boy.dir
+
     def draw(self):
         if self.boy.face_dir == 1:
             self.boy.image.clip_draw(self.boy.frame * 100, 100, 100, 100, self.boy.x, self.boy.y+40, 200, 200)
