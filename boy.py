@@ -25,12 +25,13 @@ class AutoRun:
 
     def enter(self, e):
         self.boy.dir = self.boy.face_dir
-        
+
     def exit(self,e):
         pass
 
     def do(self):
-        pass
+        self.boy.frame = (self.boy.frame + 1) % 8
+        self.boy.x += self.boy.dir * 10 #run달리기 속도보다 빠르게 10.
 
     def draw(self):
         pass
