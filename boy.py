@@ -23,6 +23,9 @@ class AutoRun:
     def __init__(self, boy):
         self.boy = boy
 
+    def enter(self, e):
+        self.boy.dir = self.boy.face_dir
+        
     def exit(self,e):
         pass
 
